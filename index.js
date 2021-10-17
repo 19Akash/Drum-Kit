@@ -25,6 +25,7 @@ for(var i=0;i<document.querySelectorAll(".drum").length;i++){
                 var audio=new Audio("./sounds/tom-6.mp3");
                 audio.play(); 
         }
+        btnAnimation(w);
     }
     
 }
@@ -53,5 +54,15 @@ document.addEventListener("keydown", function(event){
             var audio=new Audio("./sounds/tom-6.mp3");
             audio.play(); 
     }
+    btnAnimation(w);
 
 })
+
+function btnAnimation(currentKey){
+    var activeButton=document.querySelector("."+currentKey);
+    activeButton.classList.add("pressed")
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    },100);
+
+}
